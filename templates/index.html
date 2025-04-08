@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spell Corrector</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin-top: 50px;
+            text-align: center;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 18px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Spell Corrector</h1>
+    <form method="POST">
+        <input type="text" name="word" placeholder="Enter a word" required>
+        <button type="submit">Correct</button>
+    </form>
+    {% if corrected %}
+        <h2>Suggested Correction: <span style="color: green">{{ corrected }}</span></h2>
+    {% endif %}
+</body>
+</html>
