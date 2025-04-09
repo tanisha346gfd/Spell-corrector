@@ -4,25 +4,72 @@
     <title>Spell Corrector</title>
     <style>
         body {
-            font-family: Arial;
-            margin-top: 50px;
-            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
-        input, button {
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        input[type="text"] {
             padding: 10px;
             font-size: 18px;
-            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 300px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            margin-top: 30px;
+            font-size: 22px;
+            color: #444;
+        }
+
+        span {
+            color: green;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>Spell Corrector</h1>
+    <h1>🔤 Spell Correction App</h1>
     <form method="POST">
         <input type="text" name="word" placeholder="Enter a word" required>
         <button type="submit">Correct</button>
     </form>
+
     {% if corrected %}
-        <h2>Suggested Correction: <span style="color: green">{{ corrected }}</span></h2>
+        <h2>Suggested Correction: <span>{{ corrected }}</span></h2>
     {% endif %}
 </body>
 </html>
